@@ -16,3 +16,52 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//---------------------------Year----------------------------------------
+Route::get('admin/index/year','adminController@index_year');
+Route::get('admin/create/year','adminController@create_year');
+Route::post('admin/store/year','adminController@store_year');
+Route::get('admin/edit/year/{id}','adminController@edit_year');
+Route::post('admin/update/year','adminController@update_year');
+Route::delete('admin/delete/year/{id}','adminController@destroy_year');
+//--------------------------End Year-------------------------------------
+
+
+//---------------------------Education Level-------------------------
+Route::get('admin/index/level','adminController@index_level');
+Route::get('admin/create/level','adminController@create_level');
+Route::post('admin/store/level','adminController@store_level');
+Route::get('admin/edit/level/{id}','adminController@edit_level');
+Route::post('admin/update/level','adminController@update_level');
+Route::delete('admin/delete/level/{id}','adminController@destroy_level');
+
+
+//--------------------------end Education level--------------------------
+
+//---------------------------start Sublevel-----------------------------
+Route::get('admin/index/sublevel','adminController@index_sublevel');
+Route::get('admin/create/sublevel','adminController@create_sublevel');
+Route::post('admin/store/sublevel','adminController@store_sublevel');
+Route::get('admin/edit/sublevel/{id}','adminController@edit_sublevel');
+Route::post('admin/update/sublevel','adminController@update_sublevel');
+Route::delete('admin/delete/sublevel/{id}','adminController@destroy_sublevel');
+//----------------------------End sublevel----------------------------------
+
+
+//-------------------------------Start Nationality---------------------------
+Route::get('admin/index/nationality','adminController@index_nationality');
+Route::get('admin/create/nationality','adminController@create_nationality');
+Route::post('admin/store/nationality','adminController@store_nationality');
+Route::get('admin/edit/nationality/{id}','adminController@edit_nationality');
+Route::post('admin/update/nationality','adminController@update_nationality');
+Route::delete('admin/delete/nationality/{id}','adminController@destroy_nationality');
+// -------------------------------End Nationality----------------------------
+
+//--------------------------------Start Course------------------------------
+Route::get('admin/index/course','adminController@index_course');
+Route::get('admin/create/course','adminController@create_course');
+Route::post('admin/store/course','adminController@store_course');
+Route::get('admin/edit/course/{id}','adminController@edit_course');
+Route::post('admin/update/course','adminController@update_course');
+Route::delete('admin/delete/course/{id}','adminController@destroy_course');
+//---------------------------------End Course-----------------------------
