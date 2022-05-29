@@ -187,7 +187,7 @@
                 
               <div class="card col-md-8 grid-margin">
                 <p class="card-description" style="margin: 20px;">
-                    <a href="{{ url('admin/create/nationality') }}" > <button type="button" class="btn btn-primary"> Add Nationality</button></a>
+                    <a href="{{ url('admin/create/town') }}" > <button type="button" class="btn btn-primary"> Add Town</button></a>
                   </p>
 
 
@@ -209,7 +209,8 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Nationality</th>
+                          <th>Governorate</th>
+                          <th>Town</th>
                           <th>Actions </th>
                         
                           
@@ -217,22 +218,23 @@
                       </thead>
                       <tbody>
                      
-                        @foreach ($data as $nation)
-                           <td>{{ $nation->id }} </td>
-                            <td>{{ $nation->Nation }} </td>
+                        @foreach ($data as $p)
+                           <td>{{ $p->Id }} </td>
+                            <td>{{ $p->GovName }} </td>
+                            <td>{{ $p->TownName }} </td>
                             
                             <td>
                                 
-                                <a href="{{ url('admin/edit/nationality/'. $nation->id ) }}"> <button type="button" class="btn btn-primary"  style="margin-right: 10px;"> Edit</button></a>
+                                <a href="{{ url('admin/edit/town/'. $p->Id ) }}"> <button type="button" class="btn btn-primary"  style="margin-right: 10px;"> Edit</button></a>
 
-                                <a data-toggle="modal" data-target="#modal_single_del{{ $nation->id }}"  class="btn btn-danger">Delete</a>
+                                <a data-toggle="modal" data-target="#modal_single_del{{ $p->Id }}"  class="btn btn-danger">Delete</a>
 
                 
                             </td>
                             
                           </tr>
 
-                          <div class="modal" id="modal_single_del{{ $nation->id }}" tabindex="-1" role="dialog">
+                          <div class="modal" id="modal_single_del{{ $p->Id }}" tabindex="-1" role="dialog">
 
                             <div class="modal-dialog" role="document">
 
@@ -254,7 +256,7 @@
 
                                     <div class="modal-body">Delete...!<br>
                                             <div class="alert-danger p-3 m-3">
-                                              {{ $nation->Nation}}
+                                              {{ $p->TownName}}
                                             </div>
                                     </div>
 
@@ -263,7 +265,7 @@
 
 
                                         <form
-                                            action="{{ url('admin/delete/nationality/' . $nation->id) }}"
+                                            action="{{ url('admin/delete/town/'. $p->Id) }}"
                                             method="post">
 
                                             @method('delete')

@@ -65,3 +65,31 @@ Route::get('admin/edit/course/{id}','adminController@edit_course');
 Route::post('admin/update/course','adminController@update_course');
 Route::delete('admin/delete/course/{id}','adminController@destroy_course');
 //---------------------------------End Course-----------------------------
+
+
+//---------------------------governorate----------------------------------------
+Route::get('admin/index/governorate','adminController@index_governorate');
+Route::get('admin/create/governorate','adminController@create_governorate');
+Route::post('admin/store/governorate','adminController@store_governorate');
+Route::get('admin/edit/governorate/{id}','adminController@edit_governorate');
+Route::post('admin/update/governorate','adminController@update_governorate');
+Route::delete('admin/delete/governorate/{id}','adminController@destroy_governorate');
+//--------------------------End governorate-------------------------------------
+
+//---------------------------Town----------------------------------------
+Route::get('admin/index/town','adminController@index_town');
+Route::get('admin/create/town','adminController@create_town');
+Route::post('admin/store/town','adminController@store_town');
+Route::get('admin/edit/town/{id}','adminController@edit_town');
+Route::post('admin/update/town','adminController@update_town');
+Route::delete('admin/delete/town/{id}','adminController@destroy_town');
+//--------------------------End Town-------------------------------------
+
+//---------------------------District----------------------------------------
+Route::get('admin/index/district','adminController@index_district');
+Route::get('admin/create/district','adminController@create_district');
+Route::post('admin/store/district','adminController@store_district');
+Route::get('admin/edit/district/{id}','adminController@edit_district');
+Route::post('admin/update/district','adminController@update_district');
+Route::delete('admin/delete/district/{id}','adminController@destroy_district');
+//--------------------------End district-------------------------------------

@@ -6,8 +6,13 @@ use App\Models\EduLevel;
 use App\Models\Sublevel;
 use App\Models\Nationality;
 use App\Models\Course;
+use App\Models\District;
+use App\Models\Gov;
+use App\Models\Town;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use PhpParser\Node\Scalar\MagicConst\Dir;
 
 class adminController extends Controller
 {
@@ -412,4 +417,224 @@ public function destroy_sublevel($id)
     }
 //--------------------------------End Course--------------------------
 
+
+//================================Start Governorate================================
+
+public function index_governorate()
+{
+    $data=Gov::get();
+    return view('Admin.places.gov.admin_indexGov',['data'=>$data]);
+}
+
+/**
+ 
+ * @return \Illuminate\Http\Response
+ */
+public function create_governorate()
+{
+    return view('Admin.places.gov.admin_addGov');
+}
+
+/**
+ * Store a newly created resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
+public function store_governorate(Request $request)
+{
+    $request->validate([
+        'GovName'=>'required|min:5'
+    ]);
+
+    $y=Gov::create(['GovName'=>$request->GovName]);
+
+    return redirect(url('admin/index/governorate'))->with('success','Governorate created successfully');
+    
+}
+
+
+
+/**
+ * Show the form for editing the specified resource.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function edit_governorate($id)
+{
+    $data = Gov::find($id);
+    return view('Admin.places.gov.admin_editGov',['data'=>$data]);
+}
+
+/**
+ * Update the specified resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function update_governorate(Request $request)
+{
+   $data= $request->validate(['GovName'=> 'required|min:5' ]);
+
+    $ya=Gov::where('Id',$request->id)->update($data);
+    return redirect(url('admin/index/governorate'))->with('success','Governorate updated successfully');
+}
+
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function destroy_governorate($id)
+{
+    $op = Gov::where('id', $id)->delete();
+    return redirect(url('admin/index/governorate'))->with('success','Governorate deleted successfully');
+}
+
+//----------------------------------end Govenorate---------------------------------------
+
+
+
+
+
+//===================================Start Town==========================================
+
+
+public function index_town()
+{
+    $data=Town::join('governorate','town.GovernorateId','=','governorate.Id')
+    ->select('town.*','governorate.GovName')-> get();
+   // dd($data);  
+    return view('Admin.places.town.admin_indexTown',['data'=>$data]);
+}
+
+public function create_town()
+{
+    $gov =Gov::get();
+    return view('Admin.places.town.admin_addTown',['gov'=>$gov]);
+}
+
+// Id TownName GovernorateId
+
+public function store_town(Request $request)
+{
+    $request->validate([
+        'gov'=>'required|numeric',
+        'TownName'=>'required'
+    ]);
+
+    $stor =Town::create(['GovernorateId'=>$request->gov,
+                         'TownName'=>$request->TownName]);
+
+    return redirect(url('admin/index/town'))->with('success','Town Added successfullly');
+}
+
+
+public function edit_town($id)
+{
+    $data = Town::find($id);
+    $go =Gov::get();
+    return view('Admin.places.town.admin_editTown',['data'=>$data , 'go'=>$go]);
+}
+
+
+public function update_town(Request $request)
+{
+   $data= $request->validate([ 
+    'TownName'=>'required|min:3',
+    'GovernorateId'=>'required|numeric']);
+    // $t=Town::where('Id',$request->Id)->update(['GovernorateId'=>$request->GovernorateId,
+    // 'TownName'=>$request->TownName]);
+
+   // dd($request->Id);
+    $t=Town::where('Id',$request->Id)->update($data);
+
+    return redirect(url('admin/index/town'))->with('Town','Town updated successfully');
+}
+
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function destroy_town($id)
+{
+    $op = Town::where('Id', $id)->delete();
+    return redirect(url('admin/index/town'))->with('success','Town deleted successfully');
+}
+
+//----------------------------------End Town--------------------------------------------
+
+
+
+//===================================Start District==========================================
+
+
+public function index_district()
+{
+    $data = District::join('town','district.TownId','=','town.Id')->select('district.*', 'town.TownName')->get();
+   // dd($data);  
+    return view('Admin.places.distric.admin_indexdistrict',['data'=>$data]);
+}
+
+public function create_district()
+{
+    $town =Town::get();
+    return view('Admin.places.distric.admin_addDistrict',['town'=>$town]);
+}
+
+// Id TownName GovernorateId
+
+public function store_district(Request $request)
+{
+  $d=  $request->validate([
+        'DistrictName'=>'required',
+        'TownId'=>'required|numeric'
+    ]);
+
+    $stor =District::create($d);
+
+    return redirect(url('admin/index/district'))->with('success','District Added successfullly');
+}
+
+
+public function edit_district($id)
+{
+    $data =District ::find($id);
+    $go =Town::get();
+    return view('Admin.places.distric.admin_editDistrict',['data'=>$data , 'go'=>$go]);
+}
+
+
+public function update_district(Request $request)
+{
+   $data= $request->validate([ 
+    'DistrictName'=>'required|min:3',
+    'TownId'=>'required|numeric']);
+    // $t=Town::where('Id',$request->Id)->update(['GovernorateId'=>$request->GovernorateId,
+    // 'TownName'=>$request->TownName]);
+
+  // dd($request->Id);
+    $t=District::where('Id',$request->Id)->update($data);
+
+    return redirect(url('admin/index/district'))->with('success','District updated successfully');
+}
+
+/**
+ * Remove the specified resource from storage.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
+public function destroy_district($id)
+{
+    $op = District::where('Id', $id)->delete();
+    return redirect(url('admin/index/district'))->with('success','District deleted successfully');
+}
+
+//----------------------------------End District--------------------------------------------
 }

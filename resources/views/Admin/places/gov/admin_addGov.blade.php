@@ -6,10 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>i Track</title>
-    <base href="{{ \URL::to('/') }}">
-    {{-- <base href="{{ \URL::to('/') }}"> --}}
-
-    <!-- plugins:css -->
+    <base href=" {{ URL::to('/') }}" <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
@@ -41,7 +38,7 @@
 
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item dropdown">
-              
+
                     </li>
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -59,11 +56,7 @@
                             </a>
                         </div>
                     </li>
-                    <!-- <li class="nav-item nav-settings d-none d-lg-flex">
-            <a class="nav-link" href="#">
-              <i class="icon-ellipsis"></i>
-            </a>
-          </li> -->
+
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-toggle="offcanvas">
@@ -96,7 +89,20 @@
                     </div>
                 </div>
             </div>
-           
+            <div id="right-sidebar" class="settings-panel">
+                <i class="settings-close ti-close"></i>
+                <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
+                            aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="setting-content">
+
+                    <!-- chat tab ends -->
+                </div>
+            </div>
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -125,19 +131,19 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/index/level') }}">
-                          <i class="icon-flag menu-icon"></i>
-                          <span class="menu-title">Level </span>
+                            <i class="icon-flag menu-icon"></i>
+                            <span class="menu-title">Level </span>
                         </a>
-                      </li>
-            
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/index/sublevel') }}">
-                          <i class="icon-flag menu-icon"></i>
-                          <span class="menu-title">Sublevel </span>
-                        </a>
-                      </li>
+                    </li>
 
-                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('admin/index/sublevel') }}">
+                            <i class="icon-flag menu-icon"></i>
+                            <span class="menu-title">Sublevel </span>
+                        </a>
+                    </li>
+
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/index/course') }}">
@@ -145,14 +151,15 @@
                             <span class="menu-title">Courses</span>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/index/nationality') }}">
                             <i class="icon-flag menu-icon"></i>
                             <span class="menu-title">Nationality </span>
                         </a>
                     </li>
-                 
+
+
                     <li class="nav-item">
 
                         <a class="nav-link" data-toggle="collapse" href="#stuff" aria-expanded="false"
@@ -172,6 +179,7 @@
                             </ul>
                         </div>
                     </li>
+
 
 
                 </ul>
@@ -195,25 +203,25 @@
                                 @endif
 
 
-                                    <form class="forms-sample" action="{{ url('admin/update/nationality') }}" method="POST">
-                                      @csrf
-                                      @method('post')
-                                            <input type="hidden" name="id" value="{{ $data->id }}">
+
+                                    <form class="forms-sample" action="{{ url('admin/store/governorate') }}" method="POST">
+                                        @csrf
+                                        @method('post')
+
                                         <div class="form-group">
-                                            <label for="exampleInputNationality"> Nationality</label>
+                                            <label for="exampleInputYear"> Governorate</label>
                                             <br>
-                                            <input type="text" class="form-control" id="exampleInputNationality" name="Nation" value="{{$data->Nation}}"
-                                                placeholder="Nationality">
+                                            <input type="text" class="form-control" id="exampleInputYear"
+                                                name="GovName" value="{{ old('GovName') }}" placeholder="Governorate">
 
                                         </div>
 
 
 
-
-
-
                                         <button type="submit" class="btn btn-primary mr-2">Add</button>
-                                        <button class="btn btn-light">Cancel</button>
+                                        <a href="{{ url('admin/index/governorate') }}"> <button type="button"
+                                                class="btn btn-secondary">Back</button></a>
+
                                     </form>
                                 </div>
                             </div>
