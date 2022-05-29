@@ -165,6 +165,27 @@
                             <span class="menu-title">Nationality </span>
                         </a>
                     </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" data-toggle="collapse" href="#stuff" aria-expanded="false"
+                            aria-controls="stuff">
+                            <i class="icon-book menu-icon"></i>
+                            <span class="menu-title">Address</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="stuff">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{{ url('admin/index/governorate') }}">Governorate</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/index/town') }}">Town</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="{{ url('admin/index/district') }}">District</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                  
 
 
@@ -177,6 +198,17 @@
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
+
+
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
 
 
                                     <form class="forms-sample" action="{{ url('admin/update/course') }}" method="POST">

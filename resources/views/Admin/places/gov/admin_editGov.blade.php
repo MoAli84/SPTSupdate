@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>i Track</title>
-  <base href="{{ \URL::to('/') }}">
-
+  <base href="{{ URL::to('/') }}"
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/t.png" />
- 
 </head>
 <body>
   <div class="container-scroller">
@@ -39,7 +38,7 @@
         
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
-        
+          
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -56,7 +55,7 @@
               </a>
             </div>
           </li>
-      
+       
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="icon-menu"></span>
@@ -93,7 +92,7 @@
          
         </ul>
         <div class="tab-content" id="setting-content">
-      
+         
           <!-- chat tab ends -->
         </div>
       </div>
@@ -152,7 +151,8 @@
                     <span class="menu-title">Nationality </span>
                 </a>
             </li>
-         
+
+
 
             <li class="nav-item">
 
@@ -181,120 +181,46 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-md-12 grid-margin">
-                
-              <div class="row">
-                
-              <div class="card col-md-8 grid-margin">
-                <p class="card-description" style="margin: 20px;">
-                    <a href="{{ url('admin/create/nationality') }}" > <button type="button" class="btn btn-primary"> Add Nationality</button></a>
-                  </p>
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
 
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
-                  
-                <div class="table-responsive">
+                    
+                    
+                    <form class="forms-sample" action="{{ url('admin/update/governorate') }}" method="POST">
+                      @csrf
+                      @method('post')
+                      <input type="hidden" name="id" value="{{ $data->Id }}">
 
-
-                  <div class="container">
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success" role="alert">
-            
-                            {{ $message }}
-            
-                        </div>
-                    @endif
-                  </div>
-
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>Id</th>
-                          <th>Nationality</th>
-                          <th>Actions </th>
-                        
-                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                     
-                        @foreach ($data as $nation)
-                           <td>{{ $nation->id }} </td>
-                            <td>{{ $nation->Nation }} </td>
-                            
-                            <td>
-                                
-                                <a href="{{ url('admin/edit/nationality/'. $nation->id ) }}"> <button type="button" class="btn btn-primary"  style="margin-right: 10px;"> Edit</button></a>
-
-                                <a data-toggle="modal" data-target="#modal_single_del{{ $nation->id }}"  class="btn btn-danger">Delete</a>
-
-                
-                            </td>
-                            
-                          </tr>
-
-                          <div class="modal" id="modal_single_del{{ $nation->id }}" tabindex="-1" role="dialog">
-
-                            <div class="modal-dialog" role="document">
-
-                                <div class="modal-content">
-
-                                    <div class="model-header">
-
-                                        <h5 class="modal-title">Delete Conformation
-                                        </h5>
-                                        <button type="button" class="close"
-                                            data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">
-                                                &times;
-
-                                            </span>
-                                        </button>
-
-                                    </div>
-
-                                    <div class="modal-body">Delete...!<br>
-                                            <div class="alert-danger p-3 m-3">
-                                              {{ $nation->Nation}}
-                                            </div>
-                                    </div>
-
-                                    <div class="modal-footer">
-
-
-
-                                        <form
-                                            action="{{ url('admin/delete/nationality/' . $nation->id) }}"
-                                            method="post">
-
-                                            @method('delete')
-                                            @csrf
-
-                                            <div class="not-empty-record">
-
-                                                <button type="submit"
-                                                    class="btn btn-primary">Delete</button>
-                                                <button type="button"
-                                                    class="btn btn-secondary"
-                                                    data-dismiss="modal">close</button>
-
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        @endforeach
-                          <tr>
+                        <div class="form-group" >
+                            <label for="exampleInputYear"> Governorate</label>
+                            <br>
+                            <input type="text"  class="form-control" name="GovName" value="{{ $data->GovName }}" id="exampleInputYear" placeholder="Governorate">
                            
+                        </div>
                         
-                      </tbody>
-                    </table>
+                            
+                           
+
+                              
+                     
+                      <button type="submit" class="btn btn-primary mr-2">Add</button>
+                      <a href="{{ url('admin/index/governorate') }}" > <button type="button" class="btn btn-secondary">Back</button></a>
+
+                    </form>
                   </div>
+                </div>
               </div>
-              </div>
-            </div>
           </div>
           
       

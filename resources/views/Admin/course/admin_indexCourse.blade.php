@@ -152,6 +152,28 @@
                     <span class="menu-title">Nationality </span>
                 </a>
             </li>
+
+
+
+            <li class="nav-item">
+
+              <a class="nav-link" data-toggle="collapse" href="#stuff" aria-expanded="false"
+                  aria-controls="stuff">
+                  <i class="icon-book menu-icon"></i>
+                  <span class="menu-title">Address</span>
+                  <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="stuff">
+                  <ul class="nav flex-column sub-menu">
+                      <li class="nav-item"> <a class="nav-link"
+                              href="{{ url('admin/index/governorate') }}">Governorate</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('admin/index/town') }}">Town</a>
+                      </li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('admin/index/district') }}">District</a>
+                      </li>
+                  </ul>
+              </div>
+          </li>
          
 
 

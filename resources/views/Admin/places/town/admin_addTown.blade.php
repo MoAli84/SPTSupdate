@@ -96,7 +96,20 @@
                     </div>
                 </div>
             </div>
+            <div id="right-sidebar" class="settings-panel">
+                <i class="settings-close ti-close"></i>
+                <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
+                            aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="setting-content">
            
+                    <!-- chat tab ends -->
+                </div>
+            </div>
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -152,7 +165,7 @@
                             <span class="menu-title">Nationality </span>
                         </a>
                     </li>
-                 
+
                     <li class="nav-item">
 
                         <a class="nav-link" data-toggle="collapse" href="#stuff" aria-expanded="false"
@@ -172,6 +185,7 @@
                             </ul>
                         </div>
                     </li>
+                 
 
 
                 </ul>
@@ -194,26 +208,32 @@
                                     </div>
                                 @endif
 
-
-                                    <form class="forms-sample" action="{{ url('admin/update/nationality') }}" method="POST">
+                                    <form class="forms-sample" action="{{ url('admin/store/town') }}" method="POST">
                                       @csrf
                                       @method('post')
-                                            <input type="hidden" name="id" value="{{ $data->id }}">
+
+                                      <div class="form-group">
+                                          
+                                        <label for="exampleS"><b>Governorate</b></label>
+                                        <select class="form-control" name="gov" id="exampleS" style="width: 50%;">
+                                           @foreach ($gov as $p )
+                                               <option value="{{ $p->Id }}">{{ $p->GovName }}</option>
+                                           @endforeach 
+                                        </select>
+                                      </div>
+
                                         <div class="form-group">
-                                            <label for="exampleInputNationality"> Nationality</label>
+                                            <label for="exampleInput">Town</label>
                                             <br>
-                                            <input type="text" class="form-control" id="exampleInputNationality" name="Nation" value="{{$data->Nation}}"
-                                                placeholder="Nationality">
+                                            <input type="text" class="form-control" id="exampleInput"  name="TownName" value="{{ old('TownName') }}"
+                                                placeholder="Town Name">
 
                                         </div>
 
 
-
-
-
-
                                         <button type="submit" class="btn btn-primary mr-2">Add</button>
-                                        <button class="btn btn-light">Cancel</button>
+                                        <a href="{{ url('admin/index/town') }}" > <button type="button" class="btn btn-secondary">Back</button></a>
+
                                     </form>
                                 </div>
                             </div>

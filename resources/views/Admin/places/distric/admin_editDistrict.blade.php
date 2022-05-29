@@ -59,11 +59,7 @@
                             </a>
                         </div>
                     </li>
-                    <!-- <li class="nav-item nav-settings d-none d-lg-flex">
-            <a class="nav-link" href="#">
-              <i class="icon-ellipsis"></i>
-            </a>
-          </li> -->
+                
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-toggle="offcanvas">
@@ -95,8 +91,7 @@
                         <div class="tiles default"></div>
                     </div>
                 </div>
-            </div>
-           
+            </div>   
             <!-- partial -->
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -152,7 +147,8 @@
                             <span class="menu-title">Nationality </span>
                         </a>
                     </li>
-                 
+
+
                     <li class="nav-item">
 
                         <a class="nav-link" data-toggle="collapse" href="#stuff" aria-expanded="false"
@@ -172,6 +168,7 @@
                             </ul>
                         </div>
                     </li>
+                 
 
 
                 </ul>
@@ -195,25 +192,40 @@
                                 @endif
 
 
-                                    <form class="forms-sample" action="{{ url('admin/update/nationality') }}" method="POST">
+
+                                    <form class="forms-sample" action="{{ url('admin/update/district') }}" method="POST">
                                       @csrf
                                       @method('post')
-                                            <input type="hidden" name="id" value="{{ $data->id }}">
+                                            <input type="hidden" name="Id" value="{{ $data->Id }}">
+
+
+                                            
                                         <div class="form-group">
-                                            <label for="exampleInputNationality"> Nationality</label>
+                                            <label for="exampleSelectReligion">Town</label>
+                                            <select class="form-control" name="TownId" style="width: 50%;">
+                                                @foreach ($go as $info)
+                                                    <option value="{{ $info->Id }}"
+                                                        @if ($data->TownId == $info->Id) selected @endif>
+                                                        {{ $info->TownName }}</option>
+                                                @endforeach
+
+
+                                            </select>
+                                        </div> 
+
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputNationality">district</label>
                                             <br>
-                                            <input type="text" class="form-control" id="exampleInputNationality" name="Nation" value="{{$data->Nation}}"
-                                                placeholder="Nationality">
+                                            <input type="text" class="form-control" id="exampleInputNationality" name="DistrictName" value="{{$data->DistrictName}}"
+                                                placeholder="District">
 
                                         </div>
 
-
-
-
-
-
                                         <button type="submit" class="btn btn-primary mr-2">Add</button>
-                                        <button class="btn btn-light">Cancel</button>
+                                        <a href="{{ url('admin/index/district') }}" > <button type="button" class="btn btn-secondary">Back</button></a>
+
                                     </form>
                                 </div>
                             </div>
