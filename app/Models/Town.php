@@ -9,5 +9,6 @@ class Town extends Model
 {
     use HasFactory;
     protected $table = 'town';
-    public $timestamps = false;
+    // protected $fillable = ['TownName'];
+    // public $timestamps = false;
 }

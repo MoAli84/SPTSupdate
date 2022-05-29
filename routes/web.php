@@ -65,3 +65,15 @@ Route::get('admin/edit/course/{id}','adminController@edit_course');
 Route::post('admin/update/course','adminController@update_course');
 Route::delete('admin/delete/course/{id}','adminController@destroy_course');
 //---------------------------------End Course-----------------------------
+
+
+//-------------------------StudentAffairs--------------------------
+Route::get('affair/home','StudentAffairController@home');
+Route::get('affair/index','studentAffairController@index');
+Route::get('affair/create','studentAffairController@create');
+Route::post('affair/store','studentAffairController@store');
+Route::get('affair/edit/{id}','studentAffairController@edit');
+Route::post('affair/update','studentAffairController@update');
+Route::delete('affair/delete/{studentSsn}','studentAffairController@destroy');
+Route::get('affair/show/{studentSsn}','studentAffairController@show');
+//---------------------------------------------------------------

@@ -9,9 +9,9 @@ class Affairs extends Model
 {
     use HasFactory;
     protected $table='students';
-    protected $fillable=['name','surname','studentSsn' ,'birthdate','genderId','nationalityId','religionId',
-     'countryId', 'townId','districtId',
-     'fatherName','fatherJob','fatherSsn','fatherPhone','motherJob','motherName','motherSsn','motherPhone',
+    protected $fillable=['Name','Surname','StudentSsn' ,'Birthdate','GenderId','NationalityId','ReligionId',
+     'GovernorateId', 'TownId','DistrictId',
+     'FatherName','FatherJob','FatherSsn','FatherPhone','MotherJob','MotherName','MotherSsn','MotherPhone',
      'created_at' , 'updated_at'];
 
 

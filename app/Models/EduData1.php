@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EduData extends Model
+class EduData1 extends Model
 {
     use HasFactory;
     protected $table = 'education_data';
-    protected $fillable = ['AcdYearId', 'StudentSsn', 'EduId','LevelId','TermId' ];
-    public $timestamps =false;
+    protected $fillable = ['AcdYearId','LevelId','TermId' ,'StudentSsn','created_at' , 'updated_at'];//, 'eduId'
+    // public $timestamps = 'false';
 }

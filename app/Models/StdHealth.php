@@ -9,6 +9,6 @@ class StdHealth extends Model
 {
     use HasFactory;
     protected $table ='student_disease';
-    protected $fillable=['chronic','disease_name','disease_degree','height','weight','extra_data','studentSsn'];
+    protected $fillable=['StudentSsn','chronic','disease_name','disease_degree','height','weight','extra_data'];//,'studentId'
     public $timestamps=false;
 }

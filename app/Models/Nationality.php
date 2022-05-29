@@ -11,3 +11,4 @@ class Nationality extends Model
     protected $table = "nationality";
     protected $fillable =['Nation'];
 }
+ 
