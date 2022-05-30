@@ -27,7 +27,7 @@ class adminController extends Controller
     }
 
     /**
-     
+
      * @return \Illuminate\Http\Response
      */
     public function create_year()
@@ -50,10 +50,10 @@ class adminController extends Controller
         $y=Year::create(['year'=>$request->year]);
 
         return redirect(url('admin/index/year'))->with('success','Year created successfully');
-        
+
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -97,22 +97,22 @@ class adminController extends Controller
     //--------------------------------------End Year-------------------------------------
 
 
-    
+
 
 //====================================Level========================================
  /**
-     
+
      * @return \Illuminate\Http\Response
      */
     public function index_level()
     {
         $data=EduLevel::get();
-   
+
         return view('Admin.level.admin_indexlevel',['data'=>$data]);
     }
 
     /**
-     
+
      * @return \Illuminate\Http\Response
      */
     public function create_level()
@@ -135,10 +135,10 @@ class adminController extends Controller
         $lev=EduLevel::create(['EduLevelName'=>$request->EduLevelName]);
 
         return redirect(url('admin/index/level'))->with('success','Academic Stage  created successfully');
-        
+
     }
 
-    
+
 
     /**
      * Show the form for editing the specified resource.
@@ -189,7 +189,7 @@ public function index_sublevel()
 {
     $data=Sublevel::join('educational_level','sublevel.LevelId','=','educational_level.id')
     ->select('sublevel.*','educational_level.EduLevelName')-> get();
-    //dd($data);  
+    //dd($data);
     return view('Admin.sublevel.admin_indexSublevel',['data'=>$data]);
 }
 
@@ -209,7 +209,7 @@ public function store_sublevel(Request $request)
 
     $sublev=Sublevel::create(['SubLevelName'=>$request->SubLevelName ,  'LevelId'=>$request->LevelId ]);
     return redirect(url('admin/index/sublevel'))->with('success','Sublevel created successfully');
-    
+
 }
 
 
@@ -229,7 +229,7 @@ public function edit_sublevel($id)
  */
 public function update_sublevel(Request $request)
 {
-   $data= $request->validate([ 
+   $data= $request->validate([
       'SubLevelName'=>'required|min:3',
        'LevelId'=>'required|numeric' ]);
 
@@ -255,7 +255,7 @@ public function destroy_sublevel($id)
 
 //----------------------------------Start Nationality------------------------
  /**
-     
+
      * @return \Illuminate\Http\Response
      */
     public function index_nationality()
@@ -265,7 +265,7 @@ public function destroy_sublevel($id)
     }
 
     /**
-     
+
      * @return \Illuminate\Http\Response
      */
     public function create_nationality()
@@ -288,7 +288,7 @@ public function destroy_sublevel($id)
         $nat=Nationality::create(['Nation'=>$request->Nation]);
 
         return redirect(url('admin/index/nationality'))->with('success','nationality created successfully');
-        
+
     }
 
     /**
@@ -347,7 +347,7 @@ public function destroy_sublevel($id)
 
 
     /**
-     
+
      * @return \Illuminate\Http\Response
      */
     public function index_course()
@@ -363,7 +363,7 @@ public function destroy_sublevel($id)
          return view('Admin.course.admin_addCourse');
     }
 
-    
+
     public function store_course(Request $request)
     {
         $m=$request->validate([
@@ -371,17 +371,17 @@ public function destroy_sublevel($id)
             'code'  =>'required |min:5',
         ]);
         $ob = Course::create(['MaterialName'=>$request->MaterialName , 'code'=>$request->code]);
-    
+
         return redirect(url('admin/index/course'))->with('success','Course  Added successfully');
-        
+
     }
 
 
     public function edit_course($id)
     {
         $data = Course::find($id);
-  
-      
+
+
         return view('Admin.course.admin_editCourse', ['data'=>$data]);
     }
 
@@ -394,10 +394,10 @@ public function destroy_sublevel($id)
      */
     public function update_course(Request $request)
     {
-       $data= $request->validate([ 
+       $data= $request->validate([
         'MaterialName'  =>'required|min:3',
         'code'  =>'required',
-  
+
      ]);
 
         $cour=Course::where('id',$request->id)->update($data);
@@ -422,12 +422,12 @@ public function destroy_sublevel($id)
 
 public function index_governorate()
 {
-    $data=Gov::get();
+    $data= Gov::get();
     return view('Admin.places.gov.admin_indexGov',['data'=>$data]);
 }
 
 /**
- 
+
  * @return \Illuminate\Http\Response
  */
 public function create_governorate()
@@ -450,7 +450,7 @@ public function store_governorate(Request $request)
     $y=Gov::create(['GovName'=>$request->GovName]);
 
     return redirect(url('admin/index/governorate'))->with('success','Governorate created successfully');
-    
+
 }
 
 
@@ -507,7 +507,7 @@ public function index_town()
 {
     $data=Town::join('governorate','town.GovernorateId','=','governorate.Id')
     ->select('town.*','governorate.GovName')-> get();
-   // dd($data);  
+   // dd($data);
     return view('Admin.places.town.admin_indexTown',['data'=>$data]);
 }
 
@@ -543,7 +543,7 @@ public function edit_town($id)
 
 public function update_town(Request $request)
 {
-   $data= $request->validate([ 
+   $data= $request->validate([
     'TownName'=>'required|min:3',
     'GovernorateId'=>'required|numeric']);
     // $t=Town::where('Id',$request->Id)->update(['GovernorateId'=>$request->GovernorateId,
@@ -577,7 +577,7 @@ public function destroy_town($id)
 public function index_district()
 {
     $data = District::join('town','district.TownId','=','town.Id')->select('district.*', 'town.TownName')->get();
-   // dd($data);  
+   // dd($data);
     return view('Admin.places.distric.admin_indexdistrict',['data'=>$data]);
 }
 
@@ -612,7 +612,7 @@ public function edit_district($id)
 
 public function update_district(Request $request)
 {
-   $data= $request->validate([ 
+   $data= $request->validate([
     'DistrictName'=>'required|min:3',
     'TownId'=>'required|numeric']);
     // $t=Town::where('Id',$request->Id)->update(['GovernorateId'=>$request->GovernorateId,

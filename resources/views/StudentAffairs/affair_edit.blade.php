@@ -240,7 +240,7 @@
                                             <select class="form-control" name="GovernorateId" style="width: 50%;">
                                                 @foreach ($govern as $info)
                                                     <option value="{{ $info->Id }}"
-                                                        @if ($data->governorateId == $info->Id) selected @endif>
+                                                        @if ($data->GovernorateId == $info->Id) selected @endif>
                                                         {{ $info->GovName }}</option>
                                                 @endforeach
                                             </select>

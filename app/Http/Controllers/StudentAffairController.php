@@ -211,8 +211,6 @@ class StudentAffairController extends Controller
         $sub         = Sublevel::join('educational_level','educational_level.id','=','sublevel.levelId')
                              ->select('sublevel.*','educational_level.EduLevelName')->get();
         // $term        = Term::get();
-        // $sub =Sublevel::join('educational_level','educational_level.id','=','sublevel.LevelId')
-        // ->select('sublevel.*','educational_level.edulevelname')->get();
 
 
         return view('StudentAffairs.affair_edit',[

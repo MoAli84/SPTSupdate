@@ -11,10 +11,4 @@ class Governorate extends Model
     protected $table = 'governorate';
     protected $fillable = ['GovName','created_at' , 'updated_at'];
 }
-// class Gov extends Model
-// {
-//     use HasFactory;
-//     protected $table ='governorate';
-//     protected $fillable = ['GovName'];
-//     public $timestamps = false;
-// }
+

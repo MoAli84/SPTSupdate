@@ -100,5 +100,14 @@ Route::post('affair/store','studentAffairController@store');
 Route::get('affair/edit/{id}','studentAffairController@edit');
 Route::post('affair/update','studentAffairController@update');
 Route::delete('affair/delete/{studentSsn}','studentAffairController@destroy');
-Route::get('affair/show/{studentSsn}','studentAffairController@show');
+Route::get('affair/show/{StudentSsn}','studentAffairController@show');
 //--------------------------- End StudentAffair------------------------------------
+
+//-------------------------Doctor--------------------------
+Route::get('doctor/home','DoctorController@home');
+Route::get('doctor/index','DoctorController@index');
+Route::get('doctor/edit/{studentSsn}','DoctorController@edit');
+Route::post('doctor/update','DoctorController@update');
+Route::delete('doctor/delete/{studentSsn}','DoctorController@destroy');
+Route::get('affair/show/{studentSsn}','DoctorController@show');
+//--------------------------- End Doctor------------------------------------

@@ -323,17 +323,6 @@
                 <div class="row">
                     <div class="card-body">
 
-                        <div class="container">
-                            @if ($message = Session::get('success'))
-                                <div class="alert alert-success" role="alert">
-
-                                    {{ $message }}
-
-                                </div>
-                            @endif
-                        </div>
-
-
                         <p class="card-description">
                           <button type="button" class="btn btn-primary"> Upgrade Level</button>
                         </p>
@@ -344,15 +333,13 @@
 
                                     <tr>
                                         <th>Id</th>
-                                        <th>Full Name</th>
-                                        <th>SSN</th>
-                                        <th>Gender</th>
-                                        <th>Birthdate</th>
-                                        <th>Nationality</th>
-                                        <th>Religion</th>
-                                        <th>Address</th>
+                                        <th>Student Name</th>
+                                        <th>Chronic name</th>
+                                        <th>Chronic Degree</th>
+                                        <th>Width</th>
+                                        <th>Height</th>
+                                        <th>Notes</th>
                                         <th>Action</th>
-
                                     </tr>
 
                                 </thead>
@@ -361,13 +348,13 @@
                                     @foreach ($data as $info)
                                     <tr>
                                         <td> {{$info->id }}</td>
-                                        <td> {{ $info->Name . ' '. $info->FatherName . ' '. $info->Surname }} </td>
-                                        <td> {{ $info->StudentSsn }}</td>
-                                        <td> {{ $info->Sex }}</td>
-                                        <td> {{ $info->Birthdate }}</td>
-                                        <td> {{ $info->Nation }}</td>
-                                        <td> {{ $info->ReligName }}</td>
-                                        <td> {{ $info->DistrictName . ' / '. $info->TownName. ' / '. $info->GovName }}</td>
+                                        <td> {{ $info->Name .' '.$info->FatherName .' '. $info->Surname}}</td>
+                                        <td> {{ $info->disease_name }}</td>
+                                        <td> {{ $info->disease_degree }}</td>
+                                        <td> {{ $info->height }}</td>
+                                        <td> {{ $info->weight }}</td>
+                                        <td> {{ $info->extra_data }} </td>
+
                                         <td>
                                             <a href="{{ url('affair/show/'. $info->StudentSsn) }}" class="btn btn-info m-r-1em">Show</a>
                                             <a href="{{ url('affair/edit/'. $info->id) }}" class="btn btn-primary m-r-1em">Edit</a>
