@@ -99,176 +99,93 @@
             <!-- partial:../../partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('Dashboard/affair') }}">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#primary" aria-expanded="false"
-                            aria-controls="primary">
-                            <i class="icon-book menu-icon"></i>
-                            <span class="menu-title">primary</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="primary">
-                            <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url('affair/index') }}">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#primary" aria-expanded="false" aria-controls="primary">
+                      <i class="icon-book menu-icon"></i>
+                      <span class="menu-title">primary</span>
+                      <i class="menu-arrow"></i>
+                    </a>
 
-                                <li class="nav-item"> <a class="nav-link" data-toggle="collapse"
-                                        href="#first-term" aria-expanded="false" aria-controls="first-term"> first term
-                                    </a></li>
+                    <div class="collapse" id="primary">
+                    <ul class="nav flex-column sub-menu">
+
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/one') }}" > 1 </a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{url('affair/index/two') }}" > 2 </a>
+                      </li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/three') }}" >3</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/four') }}" >4</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/five') }}" >5</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/sex') }}" >6</a></li>
+                    </ul>
+                    </div>
 
 
-                                <li class="nav-item"> <a class="nav-link" data-toggle="collapse"
-                                        href="#second-term" aria-expanded="false" aria-controls="second-term"> second
-                                        term </a></li>
 
-
-
-
-                            </ul>
-                        </div>
-                        <div class="collapse" id="first-term">
-                            <h5 style="text-align:center; color: #4b49ac; font-size: 16px">first term</h5>
-                            <ul class="nav flex-column sub-menu">
-
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 2 </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">3</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">4</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">5</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">6</a></li>
-                            </ul>
-                        </div>
-                        <div class="collapse" id="second-term">
-                            <h5 style="text-align:center; color: #4b49ac; font-size: 16px">second-term</h5>
-                            <ul class="nav flex-column sub-menu">
-
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 2 </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">3</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">4</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">5</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">6</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#middle" aria-expanded="false"
-                            aria-controls="middle">
+                  </li>
+                              <!-- ************************************************************************** -->
+                        <!-- **************************************************************************************** -->
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="collapse" href="#middle" aria-expanded="false" aria-controls="middle">
                             <i class="icon-book menu-icon"></i>
                             <span class="menu-title">middle</span>
                             <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="middle">
-                            <ul class="nav flex-column sub-menu">
+                          </a>
 
-                                <li class="nav-item"> <a class="nav-link" data-toggle="collapse"
-                                        href="#f-term" aria-expanded="false" aria-controls="f-term"> first term </a>
-                                </li>
+                          <div class="collapse" id="middle">
+                          <ul class="nav flex-column sub-menu">
 
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/seven') }}"> 1 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/eight') }}"> 2 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/nine') }}">3</a></li>
 
-                                <li class="nav-item"> <a class="nav-link" data-toggle="collapse"
-                                        href="#s-term" aria-expanded="false" aria-controls="s-term"> second term </a>
-                                </li>
-
-
-
-
-                            </ul>
-                        </div>
-                        <div class="collapse" id="f-term">
-                            <h5 style="text-align:center; color: #4b49ac; font-size: 16px">first term</h5>
-                            <ul class="nav flex-column sub-menu">
-
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 2 </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">3</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="collapse" id="s-term">
-                            <h5 style="text-align:center; color: #4b49ac; font-size: 16px">second-term</h5>
-                            <ul class="nav flex-column sub-menu">
-
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 2 </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">3</a></li>
-
-                            </ul>
-                        </div>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#secondary" aria-expanded="false"
-                            aria-controls="secondary">
+                          </ul>
+                          </div>
+                        </li>
+                        <!-- *************************************************************************** -->
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="collapse" href="#secondary" aria-expanded="false" aria-controls="secondary">
                             <i class="icon-book menu-icon"></i>
                             <span class="menu-title">secondary</span>
                             <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="secondary">
-                            <ul class="nav flex-column sub-menu">
+                          </a>
 
-                                <li class="nav-item"> <a class="nav-link" data-toggle="collapse"
-                                        href="#f-t" aria-expanded="false" aria-controls="f-t"> first term </a></li>
+                          <div class="collapse" id="secondary">
+                          <ul class="nav flex-column sub-menu">
 
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/ten') }}"> 1 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/eleven') }}"> 2 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/twelve') }}">3</a></li>
 
-                                <li class="nav-item"> <a class="nav-link" data-toggle="collapse"
-                                        href="#s-t" aria-expanded="false" aria-controls="s-t"> second term </a></li>
+                          </ul>
+                          </div>
 
+                        </li>
 
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url('affair/create') }}">
+                      <i class="icon-plus menu-icon"></i>
+                      <span class="menu-title">Add Student</span>
+                    </a>
+                  </li>
 
-
-                            </ul>
-                        </div>
-                        <div class="collapse" id="f-t">
-                            <h5 style="text-align:center; color: #4b49ac; font-size: 16px">first term</h5>
-                            <ul class="nav flex-column sub-menu">
-
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 2 </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">3</a></li>
-
-                            </ul>
-                        </div>
-                        <div class="collapse" id="s-t">
-                            <h5 style="text-align:center; color: #4b49ac; font-size: 16px">second-term</h5>
-                            <ul class="nav flex-column sub-menu">
-
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 1 </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html"> 2 </a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">3</a></li>
-
-                            </ul>
-                        </div>
-
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('add/student') }}">
-                            <i class="icon-plus menu-icon"></i>
-                            <span class="menu-title">Add Student</span>
-                        </a>
-                    </li>
 
 
 
 
 
                 </ul>
-            </nav>
+              </nav>
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="row">
+
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -284,37 +201,44 @@
                                     @endif
 
 
+                                    {{-- <h4 class="card-title">Basic Data</h4> --}}
                                     <h4 class="card-title">Basic Data</h4>
-                                    <!-- <p class="card-description">
-                    Basic form layout
-                  </p> -->
+                                        <p class="card-description">
+                                          Basic to student information
+                                        </p>
+
                                     <form class="forms-sample" action="{{ url('affair/store') }}" method="POST">
                                         @csrf
                                         @method('post')
                                         <div class="form-group">
-                                            <label for="exampleInputName1">Name</label>
+                                            <label for="exampleInputName1"><b>Name</b></label>
                                             <input type="text" class="form-control" name="Name" value="{{ old('Name') }}" id="exampleInputUsername1"
                                                 placeholder="Name">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Father Name</label>
+                                            <label for="exampleInputSsn1"><b>Father Name</b></label>
                                             <input type="text" class="form-control" name="FatherName" value="{{ old('FatherName') }}"  id="exampleInputSsn1"
                                                 placeholder="Father Name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputCountry1">Surname</label>
+                                            <label for="exampleInputCountry1"><b>Surname</b></label>
                                             <input type="text" class="form-control" name="Surname" value="{{ old('Surname') }}" id="exampleInputCountry1"
                                                 placeholder="surname">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputCountry1">Student Ssn</label>
+                                            <label for="exampleInputCountry1"><b> Student Ssn</b></label>
                                             <input type="text" class="form-control" maxlength="14" pattern="^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})[0-9]{3}([0-9]{1})[0-9]{1}$"  name="StudentSsn" value="{{ old('studentSsn') }}" id="exampleInputCountry1"
                                                 placeholder="studentSsn">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputBirth1"><b>BirthDate</b></label>
+                                            <input type="date" class="form-control"  name="Birthdate" value="{{ old('birthdate') }}" id="exampleInputBirth1"
+                                                placeholder="DD-MM-YY">
+                                        </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputConfirmCity1">Nationality</label>
+                                            <label for="exampleInputConfirmCity1"><b>Nationality</b></label>
                                             <select class="form-control" name="NationalityId" id="exampleSelectGender">
                                                 @foreach ($nation as $data)
                                                     <option value="{{ $data->id }}">{{ $data->Nation }}</option>
@@ -322,7 +246,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputConfirmCity1">Religion</label>
+                                            <label for="exampleInputConfirmCity1"><b>Religion</b></label>
                                             <select class="form-control" name="ReligionId" id="exampleSelectGender">
                                                 @foreach ($relig as $data)
                                                     <option value="{{ $data->id }}">{{ $data->ReligName }}</option>
@@ -330,7 +254,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleSelectGender">Gender</label>
+                                            <label for="exampleSelectGender"><b>Gender</b></label>
                                             <select class="form-control" name="GenderId" id="exampleSelectGender">
                                                 @foreach ($sex as $data)
                                                     <option value="{{ $data->id }}">{{ $data->Sex }}</option>
@@ -338,7 +262,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleSelectGov">Governorate</label>
+                                            <label for="exampleSelectGov"><b>Governorate</b></label>
                                             <select class="form-control" name="GovernorateId" id="exampleSelectGov">
                                                 @foreach ($govern as $data)
                                                     <option value="{{ $data->Id }}">{{ $data->GovName }}</option>
@@ -346,7 +270,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleSelectGender">Town</label>
+                                            <label for="exampleSelectGender"><b>Town</b></label>
                                             <select class="form-control" name="TownId" id="exampleSelectGender">
                                                 @foreach ($town as $data)
                                                     <option value="{{ $data->Id }}">{{ $data->TownName }}</option>
@@ -354,57 +278,71 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleSelectGender">District</label>
+                                            <label for="exampleSelectGender"><b>District</b></label>
                                             <select class="form-control" name="DistrictId" id="exampleSelectGender">
                                                 @foreach ($dist as $data)
                                                     <option value="{{ $data->Id }}">{{ $data->DistrictName }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputBirth1">BirthDate</label>
-                                            <input type="date" class="form-control"  name="Birthdate" value="{{ old('birthdate') }}" id="exampleInputBirth1"
-                                                placeholder="DD-MM-YY">
-                                        </div><br><br>
+                                 </div>
+                            </div>
+                        </div>
+
+{{-- ---------------------------   Family Data      ---------------------------------- --}}
+
+                                <div class="col-md-6 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                        <h4 class="card-title">Social Data</h4>
+                                        <p class="card-description"> information about student's family </p>
 
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Father Ssn</label>
+                                            <label for="exampleInputSsn1"><b>Father Ssn</b></label>
                                             <input type="text" class="form-control" maxlength="14" pattern="^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})[0-9]{3}([0-9]{1})[0-9]{1}$" name="FatherSsn" value="{{ old('FatherSsn') }}"  id="exampleInputSsn1"
                                                 placeholder="Father ssn">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Father Job</label>
+                                            <label for="exampleInputSsn1"><b>Father Job</b></label>
                                             <input type="text" class="form-control" name="FatherJob" value="{{ old('FatherJob') }}"  id="exampleInputSsn1"
                                                 placeholder="Father Job">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Father Phone</label>
+                                            <label for="exampleInputSsn1"><b>Father Phone</b></label>
                                             <input type="text" class="form-control" name="FatherPhone" maxlength="11" pattern="^01[0125][0-9]{8}$" value="{{ old('FatherPhone') }}"  id="exampleInputSsn1"
                                                 placeholder="Father Phone">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Mother Name</label>
+                                            <label for="exampleInputSsn1"><b>Mother Name</b></label>
                                             <input type="text" class="form-control" name="MotherName" value="{{ old('MotherName') }}"  id="exampleInputSsn1"
                                                 placeholder="mother Name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Mother Ssn</label>
+                                            <label for="exampleInputSsn1"><b>Mother Ssn</b></label>
                                             <input type="text" class="form-control" name="MotherSsn" maxlength="14" pattern="^([1-9]{1})([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})[0-9]{3}([0-9]{1})[0-9]{1}$" value="{{ old('MotherSsn') }}"  id="exampleInputSsn1"
                                                 placeholder="Mother Ssn ">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">mother Job</label>
+                                            <label for="exampleInputSsn1"><b>mother Job</b></label>
                                             <input type="text" class="form-control" name="MotherJob"  value="{{ old('MotherJob') }}"  id="exampleInputSsn1"
                                                 placeholder="motherJob">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputSsn1">Mother Phone</label>
+                                            <label for="exampleInputSsn1"><b>Mother Phone</b></label>
                                             <input type="text" class="form-control" name="MotherPhone" maxlength="11" pattern="^01[0125][0-9]{8}$" value="{{ old('MotherPhone') }}"  id="exampleInputSsn1"
                                                 placeholder="mother Phone">
                                         </div><br><br>
-{{-- ---------------------------------------------------------        Education       --}}
+                                    </div>
+                                </div>
+                            </div>
+{{-- ----------   -----------------------------------------------        Education       --}}
+
+                                <div class="col-md-6 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+
                                         <div class="form-group">
-                                            <label for="exampleSelectStage">Academic Year</label>
+                                            <label for="exampleSelectStage"><b>Academic Year</b></label>
                                             <select class="form-control" name="AcdYearId" id="exampleSelectGender">
                                                 @foreach ($year as $data)
                                                     <option value="{{ $data->id }}">{{ $data->year }}</option>
@@ -412,7 +350,7 @@
                                             </select>
                                         </div>
                                          <div class="form-group">
-                                            <label for="exampleSelectStage">Educational Level</label>
+                                            <label for="exampleSelectStage"><b>Educational Level</b></label>
                                             <select class="form-control" name="LevelId" id="exampleSelectGender">
                                                 @foreach ($sub as $data )
                                                     <option value="{{ $data->id }}">{{ $data->SubLevelName . ' - '. $data->EduLevelName}}</option>
@@ -420,64 +358,94 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputClass">Term</label>
+                                            <label for="exampleInputClass"><b>Term</b></label>
                                             <select class="form-control" name="TermId" id="exampleSelectGender">
                                                 @foreach ($term as $data)
                                                     <option value="{{ $data->id }}">{{ $data->TermName}}</option>
                                                 @endforeach
                                             </select>
                                         </div><br><br>
-{{-- ---------------------------------------------------------         Health        --}}
+                                        </div>
+                                    </div>
+                                </div>
+{{-- ----------    -----------------------------------------------         Health        --}}
+
+                                <div class="col-md-6 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+
                                         <div class="form-group row">
-                                            <label for="exampleInputchroinc" class="col-sm-2 col-form-label"><b>Have Chroinc</b></label>
-                                            <div class="col-sm-9">
+                                            <label for="exampleInputchroinc" ><b>Have Chroinc</b></label>
+                                            <div >
                                                 <input type="text" class="form-control" name='chronic' value="{{ old('chronic') }}"
-                                                Pattern = "^(?:Yes|No)$" id="exampleInputchronic" placeholder="Yes / No" style="width: 20%;">
+                                                Pattern = "^(?:Yes|No)$" id="exampleInputchronic" placeholder="Yes / No" >
                                                  <span style="font-family: Times, serif; font: 85;color: red"> * Enter (No) or (Yes) Only</span>
 
                                             </div>
                                         </div>
 
                                         <div class="form-group row" >
-                                            <label for="exampleInputAddress" class="col-sm-2 col-form-label"><b>Health</b></label>
-
-                                            <input type="text" name="disease_name" value="{{ old('disease_name') }}" class="form-control"
-                                                style="width: 20%; overflow: visible; border: 1px solid #CED4DA;
-                                                      font-weight: 400;
-                                                      font-size: 0.92rem;
-                                                      border-radius: 4px ; padding: 10px;"
-                                                placeholder="Disease Name" />
-                                            <input type="number" name="disease_degree" value="{{ old('disease_degree') }}" class="form-control"
-                                                 style="width: 20%;overflow: visible; border: 1px solid #CED4DA;
-                                                            font-weight: 400;
-                                                            font-size: 0.92rem;
-                                                            border-radius: 4px ;  padding: 10px;" placeholder="Disease Degree" />
-                                                            <span style="font-family: Times, serif; font: 85;color: red">* Enter (No) if you hasn't</span>
-
+                                            <label for="exampleInputAddress" ><b>Health</b></label>
+                                            <div>
+                                                <input type="text" name="disease_name" value="{{ old('disease_name') }}" class="form-control"
+                                                    style="width: 100%; overflow: visible; border: 1px solid #CED4DA;
+                                                        font-weight: 400;
+                                                        font-size: 0.92rem;
+                                                        border-radius: 4px ; padding: 10px;"
+                                                    placeholder="Disease Name" />
+                                            </div>
+                                            <div>
+                                                <input type="number" name="disease_degree" value="{{ old('disease_degree') }}" class="form-control"
+                                                    style="width: 100%;overflow: visible; border: 1px solid #CED4DA;
+                                                                font-weight: 400;
+                                                                font-size: 0.92rem;
+                                                                border-radius: 4px ;  padding: 10px;" placeholder="Disease Degree" />
+                                                                <span style="font-family: Times, serif; font: 85;color: red">* Enter (No) if you hasn't</span>
+                                            </div>
                                         </div>
-
                                         <div class="form-group row" >
-                                            <label for="exampleInputAddress" class="col-sm-2 col-form-label"><b>Body</b></label>
-
-                                            <input type="number" name="height" value="{{ old('height') }}" class="form-control"
-                                                style=" overflow: visible; border: 1px solid #CED4DA;
-                                                      font-weight: 400;
-                                                      font-size: 0.92rem;width: 19%;
-                                                      border-radius: 4px ; padding: 10px;"
-                                                placeholder="Height :100" />
-                                            <input type="number" name="weight" value="{{ old('weight') }}"  class="form-control"
-                                                style="overflow: visible; border: 1px solid #CED4DA;
-                                                            font-weight: 400;
-                                                            font-size: 0.92rem;width: 19%;
-                                                            border-radius: 4px ;  padding: 10px;" placeholder="Weight : cm" />
-
+                                            <label for="exampleInputAddress" ><b>Body</b></label>
+                                            <div>
+                                                <input type="number" name="weight" value="{{ old('weight') }}" class="form-control"
+                                                    style="width: 100%; overflow: visible; border: 1px solid #CED4DA;
+                                                        font-weight: 400;
+                                                        font-size: 0.92rem;
+                                                        border-radius: 4px ; padding: 10px;"
+                                                    placeholder="weight" />
+                                            </div>
+                                            <div>
+                                                <input type="number" name="height" value="{{ old('height') }}" class="form-control"
+                                                    style="width: 100%;overflow: visible; border: 1px solid #CED4DA;
+                                                                font-weight: 400;
+                                                                font-size: 0.92rem;
+                                                                border-radius: 4px ;  padding: 10px;" placeholder=" height" />
+                                                                {{-- <span style="font-family: Times, serif; font: 85;color: red">* Enter (No) if you hasn't</span> --}}
+                                            </div>
                                         </div>
+
+                                        {{-- <div class="form-group row" >
+                                            <label for="exampleInputAddress" ><b>Body</b></label>
+                                            <div>
+                                                <input type="number" name="height" value="{{ old('height') }}" class="form-control"
+                                                    style=" width: 100%; overflow: visible; border: 1px solid #CED4DA;
+                                                        font-weight: 400;
+                                                        font-size: 0.92rem;width: 19%;
+                                                        border-radius: 4px ; padding: 10px;" placeholder="Height :100" />
+                                            </div>
+                                            <div>
+                                                <input type="number" name="weight" value="{{ old('weight') }}"  class="form-control"
+                                                    style=" width: 100%; overflow: visible; border: 1px solid #CED4DA;
+                                                                font-weight: 400;
+                                                                font-size: 0.92rem;width: 19%;
+                                                                border-radius: 4px ;  padding: 10px;" placeholder="Weight : cm" />
+                                            </div>
+                                        </div> --}}
 
                                         <div class="form-group row">
-                                            <label for="exampleInputchroinc" class="col-sm-2 col-form-label"><b>Extra Data of charactristic </b></label>
-                                            <div class="col-sm-9">
+                                            <label for="exampleInputchroinc" ><b>Extra Data of charactristic </b></label>
+                                            <div >
                                                 <input type="text" class="form-control" name='extra_data' value="{{ old('extra_data') }}"
-                                                   id="exampleInputchroinc" placeholder="Extra Data" style="width: 50%; ">
+                                                   id="exampleInputchroinc" placeholder="Extra Data"  >
                                             </div>
                                         </div>
 
@@ -488,86 +456,13 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-md-6 grid-margin ">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Social Data</h4>
-                                    <p class="card-description" style="font-weight: bold;">
-                                        Father's Data
-                                    </p>
-                                    <form class="forms-sample">
-                                        <div class="form-group row">
-                                            <label for="exampleInputName2" class="col-sm-3 col-form-label">Name</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control"
-                                                    id="exampleInputFather'spresence" placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="exampleInputjob1" class="col-sm-3 col-form-label">Job</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="exampleInputjob1"
-                                                    placeholder="Job">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="exampleInputFather'spresence"
-                                                class="col-sm-3 col-form-label">Father's presence</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="exampleInputMobile"
-                                                    placeholder="Father's presence">
-                                            </div>
-                                        </div>
+                    </div>
 
-                                        <div class="form-check form-check-flat form-check-primary">
-
-                                        </div>
-                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button class="btn btn-light" type="reset">Reset</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="card" style="margin-top: 60px;">
-                                <div class="card-body">
-                                    <h4 class="card-title">Social Data</h4>
-                                    <p class="card-description" style="font-weight: bold;">
-                                        Mother's Data
-                                    </p>
-                                    <form class="forms-sample">
-                                        <div class="form-group row">
-                                            <label for="exampleInputName2" class="col-sm-3 col-form-label">Name</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control"
-                                                    id="exampleInputFather'spresence" placeholder="Name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="exampleInputjob1" class="col-sm-3 col-form-label">Job</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="exampleInputjob1"
-                                                    placeholder="Job">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="exampleInputMothers's presence"
-                                                class="col-sm-3 col-form-label">Mothers's presence</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control"
-                                                    id="exampleInputMothers's presence"
-                                                    placeholder="Mothers's presence">
-                                            </div>
-                                        </div>
-
-
-                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                        <button class="btn btn-light" type="reset">Reset</button>
-                                    </form>
-                                </div>
-                            </div> --}}
-                        {{-- </div> --}}
 
                     </div>
                 </div>
+            </div>
+
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
                 <footer class="footer">

@@ -36,9 +36,9 @@
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-7 " href="{{ url('affair/index') }}"><img src="images/track.svg"
+                <a class="navbar-brand brand-logo mr-7 " href="{{ url('doctor/index') }}"><img src="images/track.svg"
                         class="mr-2" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="{{ url('affair/index') }}"><img src="images/tlogo.svg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{{ url('doctor/index') }}"><img src="images/tlogo.svg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -104,7 +104,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ url('affair/index') }}">
+                    <a class="nav-link" href="{{ url('doctor/index') }}">
                       <i class="icon-grid menu-icon"></i>
                       <span class="menu-title">Dashboard</span>
                     </a>
@@ -119,16 +119,15 @@
                     <div class="collapse" id="primary">
                     <ul class="nav flex-column sub-menu">
 
-                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/one') }}" > 1 </a></li>
-                      <li class="nav-item"> <a class="nav-link" href="{{url('affair/index/two') }}" > 2 </a>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/one') }}"  > 1 </a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/two') }}" > 2 </a>
                       </li>
-                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/three') }}" >3</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/four') }}" >4</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/five') }}" >5</a></li>
-                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/sex') }}" >6</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/three') }}" >3</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/four') }}" >4</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/five') }}" >5</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/sex') }}" >6</a></li>
                     </ul>
                     </div>
-
 
 
                   </li>
@@ -144,10 +143,9 @@
                           <div class="collapse" id="middle">
                           <ul class="nav flex-column sub-menu">
 
-                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/seven') }}"> 1 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/eight') }}"> 2 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/nine') }}">3</a></li>
-
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/seven') }}" > 1 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/eight') }}" > 2 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/nine') }}" >3</a></li>
                           </ul>
                           </div>
                         </li>
@@ -162,21 +160,22 @@
                           <div class="collapse" id="secondary">
                           <ul class="nav flex-column sub-menu">
 
-                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/ten') }}"> 1 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/eleven') }}"> 2 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/twelve') }}">3</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/ten') }}" > 1 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/eleven') }}" > 2 </a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('doctor/index/twelve') }}" >3</a></li>
 
                           </ul>
                           </div>
 
                         </li>
 
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ url('affair/create') }}">
                       <i class="icon-plus menu-icon"></i>
                       <span class="menu-title">Add Student</span>
                     </a>
-                  </li>
+                  </li> --}}
 
 
 

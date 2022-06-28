@@ -31,8 +31,8 @@
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-7 " href="{{ url('doctor/index') }}"><img src="images/track.svg" class="mr-2" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="{{ url('doctor/index') }}"><img src="images/tlogo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-7 " href="{{ url('doctor/home') }}"><img src="images/track.svg" class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="{{ url('doctor/home') }}"><img src="images/tlogo.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -147,9 +147,9 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('doctor/home') }}">
+            <a class="nav-link" href="{{ url('doctor/index') }}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Home Page</span>
+              <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
@@ -230,125 +230,215 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-
-
-            <div class="col-md-12 grid-margin stretch-card">
-              <div class="card"  >
+            <div class="row">
+              <div class="col-md-12 grid-margin">
                 <div class="row">
-                    <div class="card-body">
+                  <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                    <h3 class="font-weight-bold">Welcome</h3>
 
-                        <p class="card-description">
-                          <button type="button" class="btn btn-primary"> Upgrade Level</button>
-                        </p>
+                  </div>
+                  <div class="col-12 col-xl-4">
+                   <div class="justify-content-end d-flex">
+                    <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                      <button class="btn btn-sm btn-light bg-white " type="button" id="dropdownMenuDate2" aria-haspopup="true" aria-expanded="true">
+                       <i class="mdi mdi-calendar"></i> Today (6 May 2022)
+                      </button>
 
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead >
-
-
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Full Name</th>
-                                        <th>SSN</th>
-                                        <th>Gender</th>
-                                        {{-- <th>Birthdate</th> --}}
-                                        <th>Level</th>
-                                        <th>Sublevel</th>
-                                        <th>Disease (degree)</th>
-                                        <th>Action</th>
-
-                                    </tr>
-
-                                </thead>
-                                <tbody>
-
-                                    @foreach ($data as $info)
-                                    <tr>
-                                        <td> {{$info->id }}</td>
-                                        <td> {{ $info->Name . ' '. $info->FatherName . ' '. $info->Surname }} </td>
-                                        <td> {{ $info->StudentSsn }}</td>
-                                        <td> {{ $info->Sex }}</td>
-                                        {{-- <td> {{ $info->Birthdate }}</td> --}}
-                                        <td> {{ $info->EduLevelName }}</td>
-                                        <td> {{ $info->SubLevelName }}</td>
-                                        <td> {{ $info->disease_name . ' ( '. $info->disease_degree . ' )'}}</td>
-                                        <td>
-                                            <a href="{{ url('doctor/show/'. $info->StudentSsn) }}" class="btn btn-info m-r-1em">Show</a>
-                                            <a href="{{ url('doctor/edit/'. $info->id) }}" class="btn btn-primary m-r-1em">Edit</a>
-                                            <a data-toggle="modal" data-target="#modal_single_del{{ $info->id }}" class="btn btn-danger m-r-1em">Delete</a>
-                                        </td>
-                                    </tr>
-
-
-                                        <div class="modal" id="modal_single_del{{ $info->id }}" tabindex="-1" role="dialog">
-
-                                            <div class="modal-dialog" role="document">
-
-                                                <div class="modal-content">
-
-                                                    <div class="model-header">
-
-                                                        <h5 class="modal-title">Delete Conformation
-                                                        </h5>
-                                                        <button type="button" class="close"
-                                                            data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">
-                                                                &times;
-
-                                                            </span>
-                                                        </button>
-
-                                                    </div>
-
-                                                    <div class="modal-body">Delete...!<br>
-                                                        <div class="alert-danger p-3">
-                                                            {{$info->Name . ' ' . $info->FatherName }}
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-
-
-                                                        <form
-                                                            action="{{ url('doctor/delete/' . $info->id) }}"
-                                                            method="post">
-
-                                                            @method('delete')
-                                                            @csrf
-
-                                                            <div class="not-empty-record">
-
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Delete</button>
-                                                                <button type="button"
-                                                                    class="btn btn-secondary"
-                                                                    data-dismiss="modal">close</button>
-
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                        {{-- **************************end of pop up of delete*********************** --}}
-                                    @endforeach
-
-                                </tbody>
-                            </table>
+                    </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card tale-bg">
+                  <div class="card-people mt-auto">
+                    <img src="images/dashboard/people.svg" alt="people">
+                    <div class="weather-info">
+                      <div class="d-flex">
+                        <div>
+                          <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
+                        </div>
+                        <div class="ml-2">
+                          <h4 class="location font-weight-normal">Banha</h4>
+                          <h6 class="font-weight-normal">Qalyubiyah</h6>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin transparent">
+                <div class="row">
+                  <div class="col-md-6 mb-4 stretch-card transparent">
+                    <div class="card card-tale">
+                      <div class="card-body">
+                          <p class="mb-4">Student Number</p>
+                          <p class="fs-30 mb-2">700</p>
 
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                          <p class="mb-4">Recent Registrations </p>
+                          <p class="fs-30 mb-2">80</p>
+
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                    <div class="card card-light-blue">
+                      <div class="card-body">
+                          <p class="mb-4">Number Of Activities</p>
+                          <p class="fs-30 mb-2">8</p>
+
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 stretch-card transparent">
+                    <div class="card card-light-danger">
+                      <div class="card card-light-danger">
+                          <div class="card-body">
+                            <p class="mb-4">Number Of Social Workers</p>
+                            <p class="fs-30 mb-2">8</p>
+
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-title">Recent Registrations</p>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-borderless">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Level</th>
+                            <th>Date</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Ahmed Ali</td>
+                            <td class="font-weight-bold">2</td>
+                            <td>21 feb 2022</td>
+
+                          </tr>
+                          <tr>
+                            <td>Mohamed Mahamod</td>
+                            <td class="font-weight-bold">3</td>
+                            <td>13 feb 2022</td>
+
+                          </tr>
+                          <tr>
+                            <td>Mohamed Ahmed</td>
+                            <td class="font-weight-bold">4</td>
+                            <td>28 feb 2022</td>
+
+                          </tr>
+                          <tr>
+                            <td>Fatma Mohamed</td>
+                            <td class="font-weight-bold">5</td>
+                            <td>30 feb 2022</td>
+
+                          </tr>
+                          <tr>
+                            <td>Amal Khaled</td>
+                            <td class="font-weight-bold">5</td>
+                            <td>01 feb 2022</td>
+
+                          </tr>
+                          <tr>
+                            <td>Ahmed Ali</td>
+                            <td class="font-weight-bold">4</td>
+                            <td>20 feb 2022</td>
+
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                      <h4 class="card-title">To Do Lists</h4>
+                      <div class="list-wrapper pt-2">
+                          <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                              <li>
+                                  <div class="form-check form-check-flat">
+                                      <label class="form-check-label">
+                                          <input class="checkbox" type="checkbox">
+                                          Add New Student
+                                      </label>
+                                  </div>
+                                  <i class="remove ti-close"></i>
+                              </li>
+                              <li class="completed">
+                                  <div class="form-check form-check-flat">
+                                      <label class="form-check-label">
+                                          <input class="checkbox" type="checkbox" checked>
+                                         Check student Profile
+                                      </label>
+                                  </div>
+                                  <i class="remove ti-close"></i>
+                              </li>
+                              <!-- <li>
+                                  <div class="form-check form-check-flat">
+                                      <label class="form-check-label">
+                                          <input class="checkbox" type="checkbox">
+                                          Project meeting with CEO
+                                      </label>
+                                  </div>
+                                  <i class="remove ti-close"></i>
+                              </li> -->
+                              <!-- <li class="completed">
+                                  <div class="form-check form-check-flat">
+                                      <label class="form-check-label">
+                                          <input class="checkbox" type="checkbox" checked>
+                                          Follow up of team zilla
+                                      </label>
+                                  </div>
+                                  <i class="remove ti-close"></i>
+                              </li> -->
+                              <li>
+                                  <div class="form-check form-check-flat">
+                                      <label class="form-check-label">
+                                          <input class="checkbox" type="checkbox">
+                                          Upgrade Student
+                                      </label>
+                                  </div>
+                                  <i class="remove ti-close"></i>
+                              </li>
+                          </ul>
+    </div>
+    <div class="add-items d-flex mb-0 mt-2">
+                          <input type="text" class="form-control todo-list-input"  placeholder="Add new task">
+                          <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
+                      </div>
+
+                  </div>
                 </div>
               </div>
             </div>
 
 
-
           </div>
-        </div>
+
 
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->

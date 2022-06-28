@@ -102,71 +102,88 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('affair/index') }}">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#primary" aria-expanded="false"
-                            aria-controls="primary">
-                            <i class="icon-head menu-icon"></i>
-                            <span class="menu-title">primary</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="primary">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">1</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="levels.html">2</a></li>
-                                <li class="nav-item"> <a class="nav-link">3</a></li>
-                                <li class="nav-item"> <a class="nav-link">4</a></li>
-                                <li class="nav-item"> <a class="nav-link">5</a></li>
-                                <li class="nav-item"> <a class="nav-link">6</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#middle" aria-expanded="false"
-                            aria-controls="middle">
-                            <i class="icon-head menu-icon"></i>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url('affair/index') }}">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#primary" aria-expanded="false" aria-controls="primary">
+                      <i class="icon-book menu-icon"></i>
+                      <span class="menu-title">primary</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+
+                    <div class="collapse" id="primary">
+                    <ul class="nav flex-column sub-menu">
+
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/one') }}" > 1 </a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{url('affair/index/two') }}" > 2 </a>
+                      </li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/three') }}" >3</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/four') }}" >4</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/five') }}" >5</a></li>
+                      <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/sex') }}" >6</a></li>
+                    </ul>
+                    </div>
+
+
+
+                  </li>
+                              <!-- ************************************************************************** -->
+                        <!-- **************************************************************************************** -->
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="collapse" href="#middle" aria-expanded="false" aria-controls="middle">
+                            <i class="icon-book menu-icon"></i>
                             <span class="menu-title">middle</span>
                             <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="middle">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="levels.html">7</a></li>
-                                <li class="nav-item"><a class="nav-link">8</a></li>
-                                <li class="nav-item"><a class="nav-link">9</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#secondary" aria-expanded="false"
-                            aria-controls="secondary">
-                            <i class="icon-head menu-icon"></i>
+                          </a>
+
+                          <div class="collapse" id="middle">
+                          <ul class="nav flex-column sub-menu">
+
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/seven') }}"> 1 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/eight') }}"> 2 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/nine') }}">3</a></li>
+
+                          </ul>
+                          </div>
+                        </li>
+                        <!-- *************************************************************************** -->
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="collapse" href="#secondary" aria-expanded="false" aria-controls="secondary">
+                            <i class="icon-book menu-icon"></i>
                             <span class="menu-title">secondary</span>
                             <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="secondary">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link">10</a></li>
-                                <li class="nav-item"> <a class="nav-link">11</a></li>
-                                <li class="nav-item"> <a class="nav-link">12</a></li>
-                            </ul>
-                        </div>
-                    </li>
+                          </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('affair/create') }}">
-                            <i class="icon-plus menu-icon"></i>
-                            <span class="menu-title">Add Student</span>
-                        </a>
-                    </li>
+                          <div class="collapse" id="secondary">
+                          <ul class="nav flex-column sub-menu">
+
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/ten') }}"> 1 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/eleven') }}"> 2 </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ url('affair/index/twelve') }}">3</a></li>
+
+                          </ul>
+                          </div>
+
+                        </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url('affair/create') }}">
+                      <i class="icon-plus menu-icon"></i>
+                      <span class="menu-title">Add Student</span>
+                    </a>
+                  </li>
+
+
+
+
 
 
                 </ul>
-            </nav>
+              </nav>
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -232,7 +249,7 @@
                                             <label for="exampleInputSsn">Student Ssn</label>
                                             <input type="text" class="form-control" name="StudentSsn"
                                                 value="{{ $data->StudentSsn }}" id="exampleInputSsn" placeholder="studentSsn"
-                                                style="width: 50%;" minlength="13" maxlength="15">
+                                                style="width: 50%;" minlength="14" maxlength="14">
                                         </div>
 
                                         <div class="form-group">
@@ -325,7 +342,7 @@
                                                 <label for="exampleInputfssn">Father Ssn</label>
                                                 <input type="text" class="form-control" name="FatherSsn"
                                                     value="{{ $data->FatherSsn }}" id="exampleInputfssn" placeholder="father ssn"
-                                                    style="width: 50%;" >
+                                                    style="width: 50%;" minlength="14" maxlength="14">
                                             </div>
                                             <div class="form-group ">
                                                 <label for="exampleInputfjob">Father Job</label>
@@ -337,7 +354,7 @@
                                                 <label for="exampleInputfphone">Father Phone</label>
                                                 <input type="text" class="form-control" name="FatherPhone"
                                                     value="{{ $data->FatherPhone }}" id="exampleInputfphone" placeholder="father phone"
-                                                    style="width: 50%;">
+                                                    style="width: 50%;" maxlength="11">
                                             </div>
                                             <div class="form-group ">
                                                 <label for="exampleInputmname">Mother Name</label>
@@ -349,7 +366,7 @@
                                                 <label for="exampleInputmssn">Mother Ssn</label>
                                                 <input type="text" class="form-control" name="MotherSsn"
                                                     value="{{ $data->MotherSsn }}" id="exampleInputmssn" placeholder="mother ssn"
-                                                    style="width: 50%;" >
+                                                    style="width: 50%;" minlength="14" maxlength="14" >
                                             </div>
                                             <div class="form-group ">
                                                 <label for="exampleInputmjob">Mother Job</label>
@@ -361,7 +378,7 @@
                                                 <label for="exampleInputmphone">Mother Phone</label>
                                                 <input type="text" class="form-control" name="MotherPhone"
                                                     value="{{ $data->MotherPhone}}" id="exampleInputmphone" placeholder="mother phone"
-                                                    style="width: 50%;">
+                                                    style="width: 50%;" maxlength="11">
                                             </div>
 
 

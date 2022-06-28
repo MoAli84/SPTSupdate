@@ -9,7 +9,6 @@ use App\Models\Course;
 use App\Models\District;
 use App\Models\Gov;
 use App\Models\Town;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use PhpParser\Node\Scalar\MagicConst\Dir;
